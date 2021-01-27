@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "devDependencies": {
+    "cspell": "^5.2.2"
+  }
+}

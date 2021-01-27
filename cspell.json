@@ -1,0 +1,19 @@
+{
+    "version": "0.1",
+    "language": "en-gb",
+    "words": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [
+    ],
+    "flagWords": [],
+    "ignorePaths": [
+        "node_modules",
+        "package*.json",
+        "(assets|images)",
+        "((README|LICENSE)\\.txt|example\\.html)"
+    ],
+    "overrides": [
+    ],
+    "enabledLanguageIds": [
+    ]
+}

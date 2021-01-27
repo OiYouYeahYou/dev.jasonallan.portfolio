@@ -2380,12 +2380,12 @@ input, select, textarea {
 
 		ul.feature-icons li {
 			text-decoration: none;
-			display: inline-block;
-			margin: 0 0 1.6875em 0;
+			/* display: inline-block; */
+			margin: 0 0 0.6875em 0;
 			padding: 0.35em 0 0 3.5em;
 			position: relative;
 			vertical-align: top;
-			width: 48%;
+			/* width: 48%; */
 		}
 
 			ul.feature-icons li:before {
@@ -2742,7 +2742,7 @@ input, select, textarea {
 			#header > header .avatar {
 				display: block;
 				margin: 0 auto 2.25em auto;
-				width: 8em;
+				width: 11em;
 			}
 
 			#header > header h1 {
@@ -3191,7 +3191,7 @@ input, select, textarea {
 
 					#header > header .avatar {
 						margin: 0 auto 1.6875em auto;
-						width: 6em;
+						width: 11em;
 					}
 
 					#header > header h1 {
