@@ -7,6 +7,12 @@
 			"options": {
 				"printWidth": 120
 			}
+		},
+		{
+			"files": "*.pug",
+			"options": {
+				"printWidth": 120
+			}
 		}
 	]
 }
