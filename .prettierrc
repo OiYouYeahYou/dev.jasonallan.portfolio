@@ -13,6 +13,13 @@
 			"options": {
 				"printWidth": 120
 			}
+		},
+		{
+			"files": "*.scss",
+			"options": {
+				"singleQuote": true,
+				"printWidth": 120
+			}
 		}
 	]
 }
