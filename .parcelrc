@@ -1,0 +1,10 @@
+{
+	"extends": "@parcel/config-default",
+	"packagers": {
+		"src/**/*.pug": "@parcel/packager-pug",
+		"static/*": "@parcel/packager-raw"
+	},
+	"reporters": [
+		"parcel-reporter-static-files-copy"
+	]
+}

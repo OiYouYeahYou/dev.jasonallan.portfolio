@@ -1,0 +1,271 @@
+doctype html
+html
+	head
+		title Jason Allan - Developer
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+		link(rel="stylesheet", href="sass/main.scss")
+		link(rel="canonical", href="https://jasonallan.dev/")
+		link(rel="shortcut icon", href="images/favicon.ico", type="image/x-icon")
+		meta(name="author", content="Jason Allan")
+		meta(name="description", content="Developer, open source advocate &amp; tech enthusiast")
+		link(rel="manifest", href="site.webmanifest")
+
+		meta(property="og:title", content="Jason Allan - Developer")
+		meta(property="og:url", content="https://jasonallan.dev/")
+		meta(property="og:locale", content="en_GB")
+		meta(property="og:description", content="Developer, open source advocate &amp; tech enthusiast")
+		meta(property="og:site_name", content="Jason Allan - Developer")
+		meta(property="og:image", content="images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg")
+
+		meta(name="twitter:card", content="summary")
+		meta(name="twitter:site", content="@OiYouYeahYou")
+		meta(name="twitter:creator", content="@OiYouYeahYou")
+		meta(name="twitter:title", content="Jason Allan - Developer")
+		meta(name="twitter:description", content="Developer, open source advocate &amp; tech enthusiast")
+		meta(name="twitter:image", content="images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg")
+		meta(name="twitter:image:alt", content="Cute little hamster")
+
+		script(type="application/ld+json").
+			{
+			  "@context": "http://schema.org",
+			  "@type": "Website",
+			  "name": "Jason Allan - Developer",
+			  "headline": "Jason Allan - Developer",
+			  "author": {
+			    "@type": "Person",
+			    "name": "Jason Allan"
+			  },
+			  "description": "Developer, open source advocate & tech enthusiast",
+			  "url": "https://jasonallan.dev/"
+			}
+
+	body.is-preload
+		// Header
+		section#header
+			// Header Header
+			header
+				span.image.avatar
+					img(src="images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg", alt="")
+				h1#logo
+					a(href="#") Jason Allan
+				p
+					| Software Developer
+
+			// Navigation
+			nav#nav
+				ul
+					li
+						a.active(href="#about") About
+					li
+						a(href="#skills") Skill
+					li
+						a(href="#project") Projects
+					li
+						a(href="#contributions") Contributions
+					li
+						a(href="#contact") Contact
+
+			// Social Icons
+			footer
+				ul.icons
+					li
+						a.icon.brands.fa-github(rel="me", target="_blank", href="https://github.com/oiyouyeahyou")
+							span.label GitHub
+					li
+						a.icon.brands.fa-twitter(rel="me", target="_blank", href="https://twiitter.com/oiyouyeahyou")
+							span.label Twitter
+					li
+						a.icon.brands.fa-stack-overflow(rel="me", target="_blank", href="https://stackoverflow.com/story/oiyouyeahyou")
+							span.label Stack Overflow
+					li
+						a.icon.brands.fa-mastodon(rel="me", target="_blank", href="https://mastodon.social/@oiyouyeahyou")
+							span.label Matodon
+					li
+						a.icon.solid.fa-envelope(href="#contact")
+							span.label Email
+
+		// Wrapper
+		#wrapper
+			// Main
+			#main
+				// About
+				section#about
+					.image.main(data-position="center")
+						img(src="images/kevin-grieve-Iy9h7vTRUpo-unsplash.jpg", alt="")
+					.container
+						header.major
+							h2 Jason Allan - Developer
+							p
+								| Developer, open-source advocate & tech enthusiast.
+						p
+							| I'm a polyglot programmer seeking a development role. I contribute to open source software.
+							| I love to solve complex problems and find the most optimum solution.
+
+				// Skills
+				section#skills
+					.container
+						h3 Skills
+						ul.feature-icons
+							// 
+							li.icon.solid.fa-code
+								b Languages:
+								| JavaScript &amp; Node.js, Go, Python Bash and Bourne Shell
+							li.icon.solid.fa-cubes
+								b Deployment:
+								| Docker, Linux, Netlify
+							li.icon.solid.fa-code-branch
+								b Versioning:
+								| Git, Mercurial
+							li.icon.solid.fa-database
+								b Databases:
+								| Sequelize, MySQL, MongoDB
+							li.icon.solid.fa-book
+								b Libraries:
+								| React, Express
+							li.icon.solid.fa-tools
+								b Tools:
+								| Nodemon, PM2, Prettier, Parcel, Observable Notebook
+						//
+							<ul class="feature-icons">
+							<li class="icon solid fa-coffee">Drink much coffee</li>
+							<li class="icon solid fa-bolt">Lightning bolt</li>
+							<li class="icon solid fa-users">Shadow clone technique</li>
+							</ul>
+
+				// Project
+				section#project
+					.container
+						h3 Projects
+						//
+							<p>
+							These are my projects; many are like them but these are mine
+							</p>
+						.features
+							// 3D Minesweeper
+							article
+								a.image(target="_blank", href="https://mines.jasonallan.dev/")
+									img(src="images/riley-mccullough-x4IIa7-3c7E-unsplash.jpg", alt="")
+								.inner
+									h4 3D Minesweeper in 2D
+									p
+										| Created a
+										span(style="white-space: nowrap") 2-dimensional
+										| representation
+										| of a
+										span(style="white-space: nowrap") 3-dimensional
+										| minesweeper game.
+									p
+										b Technologies:
+										| React, Netlify
+									ul.actions
+										li
+											a.button.primary(target="_blank", href="https://mines.jasonallan.dev/")
+												| Demo
+										li
+											a.button.icon.brands.fa-github(target="_blank", href="https://github.com/OiYouYeahYou/3d-mine")
+												| Source Code
+
+							// Pidgin Nest
+							article
+								a.image(target="_blank", href="https://pidgin.im")
+									img(src="images/sue-hughes-toQNPpuDuwI-unsplash.jpg", alt="")
+								.inner
+									h4 Pidgin Nest - Website
+									p
+										| Led the effort to bring the Pidgin website up to current technologies.
+										| Communicated and collaborated with core-team and other volunteers to migrate
+										| content from several old sources into a single statically generated website.
+									p
+										b Technologies:
+										| Hugo Static Site Generator, Docker
+									ul.actions
+										li
+											a.button.primary(target="_blank", href="https://pidgin.im/") Pidgin
+										li
+											a.button.icon.solid.fa-code(target="_blank", href="https://keep.imfreedom.org/pidgin/nest/")
+												| Source Code
+
+							// RAU Data analysis
+							article
+								a.image(href="#")
+									img(src="images/felix-mittermeier-nAjil1z3eLk-unsplash.jpg", alt="")
+								.inner
+									h4 Data Analysis - Ranked Among Us
+									p
+										| Providing data visualisation and analysis to help guide the team in managing the
+										| league. And isolating anomalous trends which help to identify cheaters and other
+										| bad actors within the community.
+									p
+										b Technologies:
+										| ObservableHQ, ExpressJS, d3, mySQL, Sequelize
+									ul.actions
+										// <li><a href="https://pidgin.im/" class="button primary">pidgin.im/</a></li>
+										// <li><a href="https://keep.imfreedom.org/pidgin/nest/" class="button">Code</a></li>
+
+				// Contributions
+				section#contributions
+					.container
+						h3 Contributions
+						p
+							| I contribute to Open Source
+						.features
+							article
+								a.image(target="_blank", href="https://www.twitch.tv/chattranslator")
+									img(src="images/edurne-chopeitia-5Z8mR4vqJD4-unsplash.jpg", alt="")
+								.inner
+									h4 Chat Translator
+									p
+										| Refactored the application for readability, performance and reduction of API costs.
+									p
+										b Technologies
+										| : Node.js, Twitch Chat (IRC), Yandex Translation API
+									ul.actions
+										li
+											a.button.primary(target="_blank", href="https://www.twitch.tv/chattranslator")
+												| Twitch: Chat Translator
+										li
+											a.button.icon.brands.fa-github(
+												target="_blank",
+												href="https://github.com/instafluff/ChatterboxTranslatorBot/"
+											)
+												| Source Code
+
+				// Contact
+				section#contact
+					.container
+						h3 Contact Me
+						p
+							| Use this super special web 1.0 web form to contact me
+						form(name="contact", method="POST", data-netlify="true")
+							.row.gtr-uniform
+								.col-6.col-12-xsmall
+									input#name(type="text", name="name", placeholder="Name *", required)
+								.col-6.col-12-xsmall
+									input#email(type="email", name="email", placeholder="Email *", required)
+								.col-12
+									input#subject(type="text", name="subject", placeholder="Subject *", required)
+								.col-12
+									textarea#message(name="message", placeholder="Message *", rows="6", required)
+								.col-12
+									ul.actions
+										li
+											input.primary(type="submit", value="Send Message")
+										li
+											input(type="reset", value="Reset Form")
+
+			// Footer
+			section#footer
+				.container
+					ul.copyright
+						//
+							Read Only by HTML5 UP
+							html5up.net | @ajlkn
+							Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+						li Design:
+							a(target="_blank", href="http://html5up.net") HTML5 UP
+						li Deployment: with Netlify
+						li Edited: Vim and VS Code
+
+		// Scripts
+		script(src="js/main.js")

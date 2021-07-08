@@ -1,4 +1,4 @@
-(function ($) {
+export function util($) {
 	/**
 	 * Generate an indented list of links from a nav. Meant for use with panel().
 	 * @return {jQuery} jQuery object.
@@ -14,22 +14,13 @@
 				target = $this.attr("target");
 
 			b.push(
-				"<a " +
-					'class="link depth-' +
-					indent +
-					'"' +
-					(typeof target !== "undefined" && target != ""
-						? ' target="' + target + '"'
-						: "") +
-					(typeof href !== "undefined" && href != ""
-						? ' href="' + href + '"'
-						: "") +
-					">" +
-					'<span class="indent-' +
-					indent +
-					'"></span>' +
-					$this.text() +
-					"</a>"
+				`<a class="link depth-${indent}"
+				${typeof target !== "undefined" && target != "" ? ` target="${target}"` : ""}
+				${typeof href !== "undefined" && href != "" ? ` href="${href}"` : ""}
+			>
+				<span class="indent-${indent}"></span>
+				${$this.text()}
+			</a>`
 			);
 		});
 
@@ -510,4 +501,4 @@
 			}
 		});
 	};
-})(jQuery);
+}
