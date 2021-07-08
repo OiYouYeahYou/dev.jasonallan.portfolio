@@ -1,4 +1,6 @@
 /* browser.js canUse v1.0 | @ajlkn | MIT licensed */
+
+"use strict";
 export function canUse(key) {
 	const style = document.createElement("div").style;
 	const firstCharUpperKey = key.charAt(0).toUpperCase() + key.slice(1);

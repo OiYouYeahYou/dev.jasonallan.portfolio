@@ -1,5 +1,6 @@
 /* jquery.scrolly v1.0.0-dev | (c) @ajlkn | MIT licensed */
 
+"use strict";
 export function scrolly($) {
 	function u(s, o) {
 		var u, a, f;

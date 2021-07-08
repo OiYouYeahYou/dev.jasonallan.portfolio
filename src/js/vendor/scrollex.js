@@ -1,5 +1,6 @@
 /* jquery.scrollex v0.2.1 | (c) @ajlkn | github.com/ajlkn/jquery.scrollex | MIT licensed */
 
+"use strict";
 export function scrollex($) {
 	var $window = $(window),
 		ids = 1,
