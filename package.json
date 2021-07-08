@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "parcel build src/*.pug && rm dist/**/*.{js,css}.map",
+    "build": "parcel build src/*.pug",
     "serve": "parcel serve src/*.pug",
     "pret": "prettier --write src/**/*.{pug,js}"
   },
