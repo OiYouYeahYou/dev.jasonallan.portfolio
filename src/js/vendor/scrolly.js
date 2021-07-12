@@ -1,59 +1,82 @@
 /* jquery.scrolly v1.0.0-dev | (c) @ajlkn | MIT licensed */
-
 "use strict";
+
+/**
+ * @param {jQuery} $ jQuery object.
+ */
 export function scrolly($) {
-	function u(s, o) {
-		var u, a, f;
-		if ((u = $(s))[t] == 0) return n;
-		a = u[i]()[r];
-		switch (o.anchor) {
+	function getPosition(elem, opts) {
+		const $elem = $(elem);
+		if (!$elem.length) {
+			return null;
+		}
+
+		const top = $elem.offset().top;
+		let ret;
+
+		switch (opts.anchor) {
 			case "middle":
-				f = a - ($(window).height() - u.outerHeight()) / 2;
+				ret = top - ($(window).height() - $elem.outerHeight()) / 2;
 				break;
 			default:
-			case r:
-				f = Math.max(a, 0);
+			case "top":
+				ret = Math.max(top, 0);
 		}
-		return typeof o[i] == "function" ? (f -= o[i]()) : (f -= o[i]), f;
+
+		ret -= typeof opts.offset == "function" ? opts.offset() : opts.offset;
+
+		return ret;
 	}
-	var t = "length",
-		n = null,
-		r = "top",
-		i = "offset",
-		s = "click.scrolly",
-		o = $(window);
-	$.fn.scrolly = function (i) {
-		var o,
-			a,
-			f,
-			l,
-			c = $(this);
-		if (this[t] == 0) return c;
-		if (this[t] > 1) {
-			for (o = 0; o < this[t]; o++) $(this[o]).scrolly(i);
-			return c;
+
+	$.fn.scrolly = function (opts) {
+		const $elem = $(this);
+		if (this.length == 0) {
+			return $elem;
 		}
-		(l = n), (f = c.attr("href"));
-		if (f.charAt(0) != "#" || f[t] < 2) return c;
-		(a = $.extend(
+
+		if (this.length > 1) {
+			for (let i = 0; i < this.length; i++) {
+				$(this[i]).scrolly(opts);
+			}
+			return $elem;
+		}
+
+		const href = $elem.attr("href") || "";
+
+		if (href.charAt(0) != "#" || href.length < 2) {
+			return $elem;
+		}
+
+		const _opts = Object.assign(
 			{
-				anchor: r,
+				anchor: "top",
 				easing: "swing",
 				offset: 0,
 				parent: $("body,html"),
-				pollOnce: !1,
+				pollOnce: false,
 				speed: 1e3,
 			},
-			i
-		)),
-			a.pollOnce && (l = u(f, a)),
-			c.off(s).on(s, function (e) {
-				var t = l !== n ? l : u(f, a);
-				t !== n &&
-					(e.preventDefault(),
-					a.parent
-						.stop()
-						.animate({ scrollTop: t }, a.speed, a.easing));
-			});
+			opts
+		);
+
+		const constantPosition = _opts.pollOnce
+			? getPosition(href, _opts)
+			: undefined;
+
+		$elem.off("click.scrolly").on("click.scrolly", function (e) {
+			const position = constantPosition
+				? constantPosition
+				: getPosition(href, _opts);
+			if (position) {
+				e.preventDefault();
+				_opts.parent
+					.stop()
+					.animate(
+						{ scrollTop: position },
+						_opts.speed,
+						_opts.easing
+					);
+			}
+		});
 	};
 }
