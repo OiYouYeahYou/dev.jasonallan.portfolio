@@ -1,0 +1,98 @@
+doctype html
+html
+	head
+		title Jason Allan - Developer
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+		link(rel="stylesheet", href="../sass/main.scss")
+		link(rel="canonical", href="https://jasonallan.dev/")
+		link(rel="shortcut icon", href="../images/favicon.ico", type="image/x-icon")
+		meta(name="author", content="Jason Allan")
+		meta(name="description", content="Developer, open source advocate &amp; tech enthusiast")
+		link(rel="manifest", href="../site.webmanifest")
+
+		meta(property="og:title", content="Jason Allan - Developer")
+		meta(property="og:url", content="https://jasonallan.dev/")
+		meta(property="og:locale", content="en_GB")
+		meta(property="og:description", content="Developer, open source advocate &amp; tech enthusiast")
+		meta(property="og:site_name", content="Jason Allan - Developer")
+		meta(property="og:image", content="../images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg")
+
+		meta(name="twitter:card", content="summary")
+		meta(name="twitter:site", content="@OiYouYeahYou")
+		meta(name="twitter:creator", content="@OiYouYeahYou")
+		meta(name="twitter:title", content="Jason Allan - Developer")
+		meta(name="twitter:description", content="Developer, open source advocate &amp; tech enthusiast")
+		meta(name="twitter:image", content="../images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg")
+		meta(name="twitter:image:alt", content="Cute little hamster")
+
+		script(type="application/ld+json").
+			{
+			  "@context": "http://schema.org",
+			  "@type": "Website",
+			  "name": "Jason Allan - Developer",
+			  "headline": "Jason Allan - Developer",
+			  "author": {
+			    "@type": "Person",
+			    "name": "Jason Allan"
+			  },
+			  "description": "Developer, open source advocate & tech enthusiast",
+			  "url": "https://jasonallan.dev/"
+			}
+
+	body.is-preload
+		// Header
+		section#header
+			// Header Header
+			header
+				span.image.avatar
+					img(src="../images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg", alt="")
+				h1#logo
+					a(href="#") Jason Allan
+				p
+					| Software Developer
+
+			// Navigation
+			nav#nav
+				block nav
+
+			// Social Icons
+			footer
+				ul.icons
+					li
+						a.icon.brands.fa-github(rel="me", target="_blank", href="https://github.com/oiyouyeahyou")
+							span.label GitHub
+					li
+						a.icon.brands.fa-twitter(rel="me", target="_blank", href="https://twiitter.com/oiyouyeahyou")
+							span.label Twitter
+					li
+						a.icon.brands.fa-stack-overflow(rel="me", target="_blank", href="https://stackoverflow.com/story/oiyouyeahyou")
+							span.label Stack Overflow
+					li
+						a.icon.brands.fa-mastodon(rel="me", target="_blank", href="https://mastodon.social/@oiyouyeahyou")
+							span.label Matodon
+					li
+						a.icon.solid.fa-envelope(href="#contact")
+							span.label Email
+
+		// Wrapper
+		#wrapper
+			// Main
+			#main
+				block main
+
+			// Footer
+			section#footer
+				.container
+					ul.copyright
+						//
+							Read Only by HTML5 UP
+							html5up.net | @ajlkn
+							Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+						li Design:
+							a(target="_blank", href="http://html5up.net") HTML5 UP
+						li Deployment: with Netlify
+						li Edited: Vim and VS Code
+
+		// Scripts
+		script(src="../js/main.js")

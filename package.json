@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "parcel build src/*.pug",
-    "serve": "parcel serve src/*.pug",
+    "build": "parcel build src/pug/*.pug",
+    "serve": "parcel serve src/pug/*.pug",
     "pret": "prettier --write src/**/*.{pug,js}"
   },
   "devDependencies": {
