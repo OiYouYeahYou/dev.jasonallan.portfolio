@@ -16,12 +16,11 @@ html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-var $window = $(window),
-	$body = $("body"),
-	$header = $("#header"),
-	$titleBar = null,
-	$nav = $("#nav"),
-	$wrapper = $("#wrapper");
+const $window = $(window);
+const $body = $("body");
+const $header = $("#header");
+let $titleBar = null;
+const $nav = $("#nav");
 
 // Breakpoints.
 breakpoints({
@@ -44,12 +43,12 @@ $window.on("load", function () {
 // Polyfill: Object fit.
 if (canUse("object-fit")) {
 	$(".image[data-position]").each(function () {
-		var $this = $(this),
-			$img = $this.children("img");
+		const $this = $(this);
+		const $img = $this.children("img");
 
 		// Apply img as background.
 		$this
-			.css("background-image", 'url("' + $img.attr("src") + '")')
+			.css("background-image", `url("${$img.attr("src")}")`)
 			.css("background-position", $this.data("position"))
 			.css("background-size", "cover")
 			.css("background-repeat", "no-repeat");
@@ -62,15 +61,17 @@ if (canUse("object-fit")) {
 // Header Panel.
 
 // Nav.
-var $nav_a = $nav.find("a");
-
+const $nav_a = $nav.find("a");
+$($nav_a[0]).addClass("active");
 $nav_a
 	.addClass("scrolly")
 	.on("click", function () {
-		var $this = $(this);
+		const $this = $(this);
 
 		// External link? Bail.
-		if ($this.attr("href").charAt(0) != "#") return;
+		if ($this.attr("href").charAt(0) != "#") {
+			return;
+		}
 
 		// Deactivate all links.
 		$nav_a.removeClass("active");
@@ -79,12 +80,14 @@ $nav_a
 		$this.addClass("active").addClass("active-locked");
 	})
 	.each(function () {
-		var $this = $(this),
-			id = $this.attr("href"),
-			$section = $(id);
+		const $this = $(this);
+		const id = $this.attr("href");
+		const $section = $(id);
 
 		// No section for this link? Bail.
-		if ($section.length < 1) return;
+		if ($section.length < 1) {
+			return;
+		}
 
 		// Scrollex.
 		$section.scrollex({
@@ -106,20 +109,20 @@ $nav_a
 				}
 
 				// Otherwise, if this section's link is the one that's locked, unlock it.
-				else if ($this.hasClass("active-locked"))
+				else if ($this.hasClass("active-locked")) {
 					$this.removeClass("active-locked");
+				}
 			},
 		});
 	});
 
 // Title Bar.
 $titleBar = $(
-	'<div id="titleBar">' +
+	`${
+		'<div id="titleBar">' +
 		'<a href="#header" class="toggle"></a>' +
-		'<span class="title">' +
-		$("#logo").html() +
-		"</span>" +
-		"</div>"
+		'<span class="title">'
+	}${$("#logo").html()}</span>` + `</div>`
 ).appendTo($body);
 
 // Panel.
@@ -138,7 +141,9 @@ $header.panel({
 $(".scrolly").scrolly({
 	speed: 1000,
 	offset: function () {
-		if (breakpoints.active("<=medium")) return $titleBar.height();
+		if (breakpoints.active("<=medium")) {
+			return $titleBar.height();
+		}
 
 		return 0;
 	},
