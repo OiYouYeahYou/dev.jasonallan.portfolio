@@ -3,11 +3,16 @@
   "scripts": {
     "build": "parcel build src/pug/*.pug",
     "serve": "parcel serve src/pug/*.pug",
-    "pret": "prettier --write src/**/*.{pug,js}"
+    "pret": "prettier --write src/**/*.{pug,js}",
+    "lint": "eslint src/{,vendor/}**/*.js",
+    "lint:watch": "nodemon -x 'eslint src/{,vendor/}**/*.js'"
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^1.16.0-0",
     "cspell": "^5.2.2",
+    "eslint": "^7.30.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.10",
     "prettier": "^2.3.2"
   },
   "dependencies": {
