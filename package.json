@@ -1,31 +1,32 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "parcel build src/pug/*.pug",
-    "serve": "parcel serve src/pug/*.pug",
-    "pret": "prettier --write src/**/*.{pug,js}",
-    "lint": "eslint src/{,vendor/}**/*.js",
-    "lint:watch": "nodemon -x 'eslint src/{,vendor/}**/*.js'"
-  },
-  "devDependencies": {
-    "@prettier/plugin-pug": "^1.16.0-0",
-    "cspell": "^5.2.2",
-    "eslint": "^7.30.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "nodemon": "^2.0.10",
-    "prettier": "^2.3.2"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
-    "@parcel/packager-raw-url": "^2.0.0-beta.2",
-    "@parcel/transformer-jsonld": "^2.0.0-beta.2",
-    "@parcel/transformer-pug": "^2.0.0-beta.2",
-    "@parcel/transformer-sass": "^2.0.0-beta.2",
-    "@parcel/transformer-webmanifest": "^2.0.0-beta.2",
-    "jquery": "^3.6.0",
-    "parcel": "^2.0.0-beta.2",
-    "parcel-reporter-static-files-copy": "^1.3.0",
-    "pug": "^3.0.2",
-    "sass": "^1.35.1"
-  }
+	"private": true,
+	"scripts": {
+		"build": "parcel build src/pug/*.pug",
+		"serve": "parcel serve src/pug/*.pug",
+		"pret": "prettier --write src/**/*.{pug,js} .prettierrc {package,cspell}.json .eslintrc.yml .parcelrc",
+		"pret:watch": "nodemon -x prettier --write src/**/*.{pug,js} .prettierrc {package,cspell}.json .eslintrc.yml .parcelrc",
+		"lint": "eslint src/{,vendor/}**/*.js",
+		"lint:watch": "nodemon -x 'eslint src/{,vendor/}**/*.js'"
+	},
+	"devDependencies": {
+		"@prettier/plugin-pug": "^1.16.0-0",
+		"cspell": "^5.2.2",
+		"eslint": "^7.30.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"nodemon": "^2.0.10",
+		"prettier": "^2.3.2"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.15.3",
+		"@parcel/packager-raw-url": "^2.0.0-beta.2",
+		"@parcel/transformer-jsonld": "^2.0.0-beta.2",
+		"@parcel/transformer-pug": "^2.0.0-beta.2",
+		"@parcel/transformer-sass": "^2.0.0-beta.2",
+		"@parcel/transformer-webmanifest": "^2.0.0-beta.2",
+		"jquery": "^3.6.0",
+		"parcel": "^2.0.0-beta.2",
+		"parcel-reporter-static-files-copy": "^1.3.0",
+		"pug": "^3.0.2",
+		"sass": "^1.35.1"
+	}
 }
