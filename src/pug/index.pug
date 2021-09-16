@@ -170,7 +170,13 @@ block main
 			h3 Contact Me
 			p.
 				Use this super special web 1.0 web form to contact me
-			form(name="contact", method="POST", data-netlify="true")
+			form(
+				name="contact",
+				method="POST",
+				data-netlify="true",
+				data-netlify-recaptcha="true",
+				netlify-honeypot="password"
+			)
 				.row.gtr-uniform
 					.col-6.col-12-xsmall
 						input#name(type="text", name="name", placeholder="Name *", required)
@@ -180,6 +186,10 @@ block main
 						input#subject(type="text", name="subject", placeholder="Subject *", required)
 					.col-12
 						textarea#message(name="message", placeholder="Message *", rows="6", required)
+					.col-12
+						div(data-netlify-recaptcha="true")
+						p(style="display: none;")
+							input(name="password", placeholder="Password")
 					.col-12
 						ul.actions
 							li
