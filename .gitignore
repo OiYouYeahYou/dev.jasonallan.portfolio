@@ -1,5 +1,6 @@
 node_modules
 *.bak
+.cache
 # Local Netlify folder
 .netlify
 .parcel-cache
