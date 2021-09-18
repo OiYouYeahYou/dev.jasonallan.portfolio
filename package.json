@@ -18,15 +18,16 @@
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.15.3",
-		"@parcel/packager-raw-url": "^2.0.0-beta.2",
-		"@parcel/transformer-jsonld": "^2.0.0-beta.2",
-		"@parcel/transformer-pug": "^2.0.0-beta.2",
-		"@parcel/transformer-sass": "^2.0.0-beta.2",
-		"@parcel/transformer-webmanifest": "^2.0.0-beta.2",
+		"@parcel/packager-raw-url": "^2.0.0-nightly.2464",
+		"@parcel/transformer-jsonld": "^2.0.0-nightly.2464",
+		"@parcel/transformer-pug": "^2.0.0-nightly.842",
+		"@parcel/transformer-sass": "^2.0.0-nightly.842",
+		"@parcel/transformer-webmanifest": "^2.0.0-nightly.2464",
 		"jquery": "^3.6.0",
-		"parcel": "^2.0.0-beta.2",
+		"parcel": "^2.0.0-nightly.840",
 		"parcel-reporter-static-files-copy": "^1.3.0",
 		"pug": "^3.0.2",
-		"sass": "^1.35.1"
+		"sass": "^1.35.1",
+		"sharp": "^0.28.3"
 	}
 }
