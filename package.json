@@ -13,6 +13,7 @@
 		"cspell": "^5.2.2",
 		"eslint": "^7.30.0",
 		"eslint-plugin-prettier": "^3.4.0",
+		"node-fetch": "^2.6.4",
 		"nodemon": "^2.0.10",
 		"prettier": "^2.3.2"
 	},
