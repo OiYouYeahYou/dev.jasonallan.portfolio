@@ -12,3 +12,8 @@ rules:
     curly: error
     no-var: error
     prettier/prettier: error
+overrides:
+    - files:
+          - pug.config.js
+      env:
+          node: true

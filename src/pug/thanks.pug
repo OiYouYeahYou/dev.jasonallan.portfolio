@@ -1,0 +1,49 @@
+extends layouts/main.pug
+
+block vars
+	-
+		sections = [
+			{ title: 'Home', href: '/' }
+		];
+	mixin addSectionItem(title, href)
+		- sections.push({ title, href });
+
+block prepend title
+	| Thanks and Attributions -&nbsp;
+
+block main
+	section#skills: .container: table
+		tr 
+			th Theme
+			td
+				a(href="http://html5up.net/") HTML5 UP
+				| &nbsp;-&nbsp;
+				a(href="https://html5up.net/read-only") Read Only
+				a(href="https://html5up.net/license") 
+					i.fab.fa-creative-commons
+					i.fab.fa-creative-commons-by
+		tr 
+			th Bundling
+			td: a(href="#") Parcel
+		tr 
+			th Templating
+			td: a(href="#") Pug
+		tr 
+			th Font Icons
+			td 
+				a(href="#") Fontawesome
+				a(href="https://fontawesome.com/license/free") 
+					i.fab.fa-creative-commons
+					i.fab.fa-creative-commons-by
+		tr 
+			th Image
+			td.
+				#[a(href="#") Unsplash]:
+				#[a(href="https://unsplash.com/photos/klMii3cR9iI") Header],
+				#[a(href="https://unsplash.com/photos/IMfgE5lyMrU") Wooden Robot]
+		tr 
+			th Deployment
+			td: a(href="#") Netlify
+
+block nav
+	include imports/nav.pug

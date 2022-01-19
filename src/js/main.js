@@ -1,5 +1,5 @@
 import $ from "jquery";
-import "@fortawesome/fontawesome-free/css/all.css";
+// import "@fortawesome/fontawesome-free/css/all.css";
 import { scrollex } from "./vendor/scrollex";
 import { util } from "./util";
 import { scrolly } from "./vendor/scrolly";
@@ -19,7 +19,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 const $window = $(window);
 const $body = $("body");
 const $header = $("#header");
-let $titleBar = null;
 const $nav = $("#nav");
 
 // Breakpoints.
@@ -82,6 +81,11 @@ $nav_a
 	.each(function () {
 		const $this = $(this);
 		const id = $this.attr("href");
+
+		if (!/^#/.test(id)) {
+			return;
+		}
+
 		const $section = $(id);
 
 		// No section for this link? Bail.
@@ -116,15 +120,6 @@ $nav_a
 		});
 	});
 
-// Title Bar.
-$titleBar = $(
-	`${
-		'<div id="titleBar">' +
-		'<a href="#header" class="toggle"></a>' +
-		'<span class="title">'
-	}${$("#logo").html()}</span>` + `</div>`
-).appendTo($body);
-
 // Panel.
 $header.panel({
 	delay: 500,
@@ -142,7 +137,7 @@ $(".scrolly").scrolly({
 	speed: 1000,
 	offset: function () {
 		if (breakpoints.active("<=medium")) {
-			return $titleBar.height();
+			return $("#titleBar").height();
 		}
 
 		return 0;

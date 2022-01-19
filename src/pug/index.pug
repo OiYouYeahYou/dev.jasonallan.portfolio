@@ -1,198 +1,58 @@
 extends layouts/main.pug
 
-block nav
-	-
-		var sections = [{
-			href: '#about',
-			title: 'About',
-		}, {
-			href: '#skills',
-			title: 'Skill',
-		}, {
-			href: '#project',
-			title: 'Projects',
-		}, {
-			href: '#contributions',
-			title: 'Contributions',
-		}, {
-			href: '#contact',
-			title: 'Contact',
-		}]
-
-	include imports/nav.pug
+block vars
+	- var sections = [];
+	mixin addSectionItem(title, href)
+		- sections.push({ title, href });
 
 block main
-	// About
-	section#about
-		.image.main(data-position="center")
-			img(src="../images/kevin-grieve-Iy9h7vTRUpo-unsplash.jpg", alt="")
-		.container
-			header.major
-				h2 Jason Allan - Developer
-				p.
-					Developer, open-source advocate & tech enthusiast.
-			p.
-				I'm a polyglot programmer seeking a development role. I
-				contribute to open source software. I love to solve complex
-				problems and find the most optimum solution.
+	//- Skills
+	+addSectionItem('Skills', '#skills')
+	section#skills: .container
+		h2 Skills
+		ul.feature-icons: each group in skills
+			li.icon(class=group.class) #[b !{ group.title }:] !{ group.skills }
 
-	// Skills
-	section#skills
-		.container
-			h3 Skills
-			ul.feature-icons
-				li.icon.solid.fa-code.
-					#[b Languages:] JavaScript &amp; Node.js, Go, Python Bash
-					and Bourne Shell
-				li.icon.solid.fa-cubes.
-					#[b Deployment:] Docker, Linux, Netlify
-				li.icon.solid.fa-code-branch.
-					#[b Versioning:] Git, Mercurial
-				li.icon.solid.fa-database.
-					#[b Databases:] Sequelize, MySQL, MongoDB
-				li.icon.solid.fa-book.
-					#[b Libraries:] React, Express
-				li.icon.solid.fa-tools.
-					#[b Tools:] Nodemon, PM2, Prettier, Parcel,
-					Observable Notebook
+	//- Project
+	+addSectionItem('Projects', '#project')
+	section#project: .container
+		h2 Projects
+		.features: +mx-items(items.projects)
 
-	// Project
-	section#project
-		.container
-			h3 Projects
-			.features
-				// 3D Minesweeper
-				article
-					a.image(target="_blank", href="https://mines.jasonallan.dev/")
-						img(src="../images/riley-mccullough-x4IIa7-3c7E-unsplash.jpg", alt="")
-					.inner
-						h4 3D Minesweeper in 2D
-						p.
-							Created a #[span(style="white-space: nowrap") 2-dimensional]
-							representation of a #[span(style="white-space: nowrap") 3-dimensional]
-							minesweeper game.
-						p.
-							#[b Technologies:] React, Netlify
-						ul.actions
-							li
-								a.button.primary(target="_blank", href="https://mines.jasonallan.dev/").
-									Demo
-							li
-								a.button.icon.brands.fa-github(target="_blank", href="https://github.com/OiYouYeahYou/3d-mine").
-									Source Code
+	//- Contributions
+	+addSectionItem('Contributions', '#contributions')
+	section#contributions: .container
+		h2 Contributions
+		p I contribute to Open Source
+		//- .features: +mx-items(items.contributions)
+		ul.contribs.feature-icons: each item in items.contributions
+			li.icon.solid.fa-code-branch(style="display: block; width: unset")
+				h3= item.title
+				p !{ item.content }
+				p #[b Technologies:] !{ item.tech }
 
-				// Pidgin Nest
-				article
-					a.image(target="_blank", href="https://pidgin.im")
-						img(src="../images/sue-hughes-toQNPpuDuwI-unsplash.jpg", alt="")
-					.inner
-						h4 Pidgin Nest - Website
-						p.
-							Led the effort to bring the Pidgin website up to
-							current technologies. Communicated and collaborated
-							with core-team and other volunteers to migrate
-							content from several old sources into a single
-							statically generated website.
-						p.
-							#[b Technologies:] Hugo Static Site Generator,
-							Docker
-						ul.actions
-							li
-								a.button.primary(target="_blank", href="https://pidgin.im/") Pidgin
-							li
-								a.button.icon.solid.fa-code(target="_blank", href="https://keep.imfreedom.org/pidgin/nest/").
-									Source Code
+	//- Hosting
+	+addSectionItem('Hosting', '#hosting')
+	section#hosting: .container
+		h2 Hosting
+		p Self hosting provides a great opportuinty to own your own services and to learn
+		.features: +mx-items(items.hosting)
 
-				// RAU Data analysis
-				article
-					a.image(href="#")
-						img(src="../images/felix-mittermeier-nAjil1z3eLk-unsplash.jpg", alt="")
-					.inner
-						h4 Data Analysis - Ranked Among Us
-						p.
-							Providing data visualisation and analysis to help
-							guide the team in managing the league. And isolating
-							anomalous trends which help to identify cheaters and
-							other bad actors within the community.
-						p.
-							#[b Technologies:] ObservableHQ, ExpressJS, d3,
-							mySQL, Sequelize
-						ul.actions
-							// <li><a href="https://pidgin.im/" class="button primary">pidgin.im/</a></li>
-							// <li><a href="https://keep.imfreedom.org/pidgin/nest/" class="button">Code</a></li>
+mixin mx-items(items)
+	each project in items
+		article
+			a.image(href=project.imageHref)
+				each image in project.image
+					img(src=image.src, alt=image.alt, title=image.alt)
+			.inner
+				h4= project.title + (project.context ? ' - ' + project.context : '')
+				| !{ project.content }
+				p #[b Technologies:] !{ project.tech }
 
-	// Contributions
-	section#contributions
-		.container
-			h3 Contributions
-			p.
-				I contribute to Open Source
-			.features
-				article
-					a.image(target="_blank", href="https://www.twitch.tv/chattranslator")
-						img(src="../images/edurne-chopeitia-5Z8mR4vqJD4-unsplash.jpg", alt="")
-					.inner
-						h4 Chat Translator
-						p.
-							Refactored the application for readability,
-							performance and reduction of API costs.
-						p.
-							#[b Technologies:] Node.js, Twitch Chat (IRC),
-							Yandex Translation API
-						ul.actions
-							li
-								a.button.primary(target="_blank", href="https://www.twitch.tv/chattranslator").
-									Twitch: Chat Translator
-							li
-								a.button.icon.brands.fa-github(target="_blank", href="https://github.com/instafluff/ChatterboxTranslatorBot/").
-									Source Code
-				article
-					a.image(target="_blank", href="https://github.com/prettier/plugin-pug/")
-						.row.gtr-uniform
-							.col-6
-								img(src="../images/prettier.svg", alt="Prettier parser logo")
-							.col-6
-								img(src="../images/pug.svg", alt="Pug JS logo")
-					.inner
-						h4 Prettier Pug Plugin
-						p.
-							Added the ability to format non-JS script content
-						p.
-							#[b Technologies:] Prettier, Node, Jest
-						ul.actions
-							li
-								a.button.icon.brands.fa-github(target="_blank", href="https://github.com/prettier/plugin-pug/").
-									Source Code
+				if project.actions
+					| !{ typeof project.actions }
+					//- ul.actions: each action of project.actions
+						li: a.button(class=action.class, target="_blank", href=action.href)= action.text
 
-	// Contact
-	section#contact
-		.container
-			h3 Contact Me
-			p.
-				Use this super special web 1.0 web form to contact me
-			form(
-				name="contact",
-				method="POST",
-				data-netlify="true",
-				data-netlify-recaptcha="true",
-				netlify-honeypot="password"
-			)
-				.row.gtr-uniform
-					.col-6.col-12-xsmall
-						input#name(type="text", name="name", placeholder="Name *", required)
-					.col-6.col-12-xsmall
-						input#email(type="email", name="email", placeholder="Email *", required)
-					.col-12
-						input#subject(type="text", name="subject", placeholder="Subject *", required)
-					.col-12
-						textarea#message(name="message", placeholder="Message *", rows="6", required)
-					.col-12
-						div(data-netlify-recaptcha="true")
-						p(style="display: none;")
-							input(name="password", placeholder="Password")
-					.col-12
-						ul.actions
-							li
-								input.primary(type="submit", value="Send Message")
-							li
-								input(type="reset", value="Reset Form")
+block nav
+	include imports/nav.pug

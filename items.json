@@ -1,0 +1,365 @@
+{
+	"projects": [
+		{
+			"weight": 20,
+			"title": "Ranked Among Us",
+			"context": "Data Analysis",
+			"tech": [
+				"Observable",
+				"Express",
+				"SQL"
+			],
+			"source": {
+				"sourceAvailable": true
+			},
+			"id": "ranked-among-us-data-analysis",
+			"content": "<p>After some curiosity I was granted access to the match data for Ranked Among Us. I had a broad remit to discover information and provided insights into what was happening at a much higher level than was available before.</p>\n<ul>\n<li>Created data dashboard for presenting findings.</li>\n<li>Analysed patterns of player behaviour over time.</li>\n<li>Discovered cheaters after analysing game length.</li>\n<li>Analysed the affects of policy changes on player activity over time.</li>\n</ul>\n"
+		},
+		{
+			"weight": 40,
+			"title": "Ranked Among Us",
+			"context": "Web Development",
+			"tech": [
+				"Netlify",
+				"Netlify CMS",
+				"Observable",
+				"Hugo",
+				"Express",
+				"Redis",
+				"SQL"
+			],
+			"source": {
+				"sourceAvailable": true
+			},
+			"image": [
+				{
+					"src": "projects/ranked-among-us/home.png",
+					"alt": "Screenshot of the Ranked Among Us home page"
+				},
+				{
+					"src": "projects/ranked-among-us/netlify-cms.png",
+					"alt": "Screenshot of the Netlify CMS used to author content on Ranked Among Us"
+				}
+			],
+			"id": "ranked-among-us-web-develompent",
+			"content": "<p>I developed 2 separate websites:</p>\n<ul>\n<li>Static site to present corporate and blog content. Using Netlify CMS to allow end users to manage content.</li>\n<li>Scoreboard website which also provided an API for a data dashboard. This site also mitigated a DDoS exploit. Migrated from PHP.</li>\n</ul>\n"
+		},
+		{
+			"weight": 60,
+			"title": "Pidgin Nest",
+			"context": "Web Lead",
+			"tech": [
+				"Hugo Static Site Generator",
+				"Mercurial",
+				"Docker"
+			],
+			"source": {
+				"url": "pidgin.im"
+			},
+			"image": [
+				{
+					"src": "projects/pidgin/logo.png",
+					"alt": "Pidgin IM logo"
+				},
+				{
+					"src": "projects/pidgin/plugins-directory.png",
+					"alt": "Screenshot of the plugins directory"
+				}
+			],
+			"id": "pidgin-nest",
+			"content": "<p>&quot;A place we call home&quot;. Lead a rejuvenation of the Pidgin messenger project’s website collaborating with the core team and stake holder to deliver a new and refreshed website.</p>\n<ul>\n<li>Developed plug-in list.</li>\n<li>Updated theme to meet project requirements.</li>\n<li>Collaborated with core developers on migrating content from multiple sources.</li>\n</ul>\n"
+		},
+		{
+			"weight": 80,
+			"title": "Battlesnakes",
+			"tech": [
+				"APIs",
+				"Competitive Coding",
+				"JavaScript",
+				"Go",
+				"A* Pathfinding"
+			],
+			"source": {
+				"sourceAvailable": true
+			},
+			"image": [
+				{
+					"src": "projects/battlesnake.jpg",
+					"alt": "Battlesnake logo"
+				}
+			],
+			"id": "battlesnakes",
+			"content": "<p>Competing in Battlesnakes, an adverserial competitive coding competition</p>\n<ul>\n<li>Implemented an A* snake<br>\nIn the Top 10% of snakes and competed in Fall League Gold bracket.</li>\n<li>Implemnted an entropic based snake.</li>\n</ul>\n"
+		},
+		{
+			"weight": 80,
+			"title": "Prjman",
+			"tech": [
+				"Electron"
+			],
+			"source": {
+				"url": "https://github.com/OiYouYeahYou/prjman"
+			},
+			"id": "prjman",
+			"content": "<p>Created a desktop application to manage code locally stored.</p>\n"
+		},
+		{
+			"weight": 100,
+			"title": "Types for hosted-git-info",
+			"tech": [
+				"Typescript",
+				"Git"
+			],
+			"source": {
+				"url": "https://npmjs.com/package/@types/hosted-git-info"
+			},
+			"image": [
+				{
+					"src": "projects/typescript.svg",
+					"alt": "TypeScript logo"
+				}
+			],
+			"id": "@types-hosted-git-info",
+			"content": "<p>Typescript typings for the npm package <code>hosted-git-info</code>. With +200k downloads a week.</p>\n"
+		},
+		{
+			"weight": 120,
+			"title": "Todoist.js",
+			"tech": [
+				"JavaScript"
+			],
+			"source": {
+				"url": "github.com/OiYouYeahYou/Todoist.js"
+			},
+			"image": [
+				{
+					"src": "projects/todoist.png",
+					"alt": "Todoist logo"
+				}
+			],
+			"id": "todoist.js",
+			"content": "<p>A JavaScript API wrapper for Todoist built while developing a custom front end.</p>\n"
+		},
+		{
+			"weight": 140,
+			"title": "Remember Me Bot",
+			"tech": [
+				"JavaScript",
+				"Express",
+				"Pug"
+			],
+			"source": {
+				"sourceAvailable": true
+			},
+			"image": [
+				{
+					"src": "projects/ochir-erdene-oyunmedeg-IMfgE5lyMrU-unsplash.jpg",
+					"alt": "An adorable wooden robot"
+				}
+			],
+			"id": "remember-me-bot",
+			"content": "<p>Created and deployed a super simple Twitch bot that helps viewers take notes for the streamer.</p>\n"
+		},
+		{
+			"weight": 160,
+			"title": "New Tab",
+			"tech": [
+				"JavaScript",
+				"Chrome Extensions",
+				"Unsplash"
+			],
+			"source": {
+				"url": "https://github.com/OiYouYeahYou/new-tab"
+			},
+			"id": "new-tab",
+			"content": "<p>A Chrome new tab extension that displays.</p>\n"
+		},
+		{
+			"weight": 180,
+			"title": "Chromeminder",
+			"tech": [
+				"JavaScript",
+				"Chrome Extensions",
+				"Unsplash"
+			],
+			"image": [
+				{
+					"src": "projects/beeminder.png",
+					"alt": "Beeminder logo"
+				}
+			],
+			"id": "chromeminder",
+			"content": "<p>Developed a Chrome extension companion to the Beeminder website that stores.</p>\n"
+		}
+	],
+	"hosting": [
+		{
+			"weight": 20,
+			"title": "Automute Bot - Among Us",
+			"tech": [
+				"Go",
+				"Docker",
+				"Docker Compose",
+				"Discord",
+				"Linux",
+				"VPS"
+			],
+			"image": [
+				{
+					"src": "servers/automuteus.svg",
+					"alt": "Factorio box art"
+				}
+			],
+			"id": "automuteus",
+			"content": "<p>Hosting the Automute bot using Docker and Docker Compose. Contributed the current Docker configuration to utilise more features of the tool.</p>\n"
+		},
+		{
+			"weight": 40,
+			"title": "Factorio Server",
+			"tech": [
+				"Linux",
+				"VPS"
+			],
+			"image": [
+				{
+					"src": "servers/factorio.jpg",
+					"alt": "Factorio logo"
+				}
+			],
+			"id": "factorio",
+			"content": "<p>Manually managing a private Factorio server.</p>\n"
+		},
+		{
+			"weight": 60,
+			"title": "Pi Hole",
+			"context": "Network DNS",
+			"tech": [
+				"Linux",
+				"Networking"
+			],
+			"image": [
+				{
+					"src": "servers/pi-hole.svg",
+					"alt": "Pi Hole logo"
+				}
+			],
+			"id": "pi-hole",
+			"content": "<p>Hosting a personal DNS server to increase network performance and block unwanted network traffic.</p>\n"
+		},
+		{
+			"weight": 80,
+			"title": "Verdaccio NPM Mirror",
+			"tech": [
+				"npm",
+				"Node",
+				"Docker"
+			],
+			"image": [
+				{
+					"src": "servers/verdaccio.svg",
+					"alt": "Verdaccio logo"
+				}
+			],
+			"id": "verdaccio",
+			"content": "<p>To improve network utilisation and performance.</p>\n"
+		}
+	],
+	"games": [
+		{
+			"weight": 20,
+			"title": "3D minesweeper",
+			"tech": "React, Netlify",
+			"source": {
+				"text": "mines.jasonallan.dev - github.com/OiYouYeahYou/3d-mine"
+			},
+			"id": "3d-mines",
+			"content": "<p>A 2D representation of a 3D minesweeper game.</p>\n"
+		},
+		{
+			"weight": 40,
+			"title": "An Honest Adventure 2 by Daniel Jenkins",
+			"tech": "Node, Docker, Docker Compose, Web Sockets\tSource Private",
+			"id": "aha2",
+			"content": "<p>Providing hosting and operations management while developing part of the server-client web socket specification.</p>\n"
+		}
+	],
+	"contributions": [
+		{
+			"weight": 20,
+			"title": "GitHub Desktop",
+			"titleRight": "Graphical Git client made by GitHub",
+			"tech": "Electron, Typescript",
+			"source": {
+				"url": "https://desktop.github.com/"
+			},
+			"image": [
+				{
+					"src": "github-desktop/logo.png",
+					"alt": "GitHub Desktop logo"
+				}
+			],
+			"id": "github-desktop",
+			"content": "<p>Solved a bug where the app was resized in a certain way, closed and opened – the app would crash.</p>\n"
+		},
+		{
+			"weight": 40,
+			"title": "Clarkio Twitch Bot",
+			"titleRight": "General purpose bot for a streamer",
+			"tech": "Typescript, Node, Twitch, Express",
+			"source": {
+				"url": "https://github.com/clarkio/ttv-chat-bot"
+			},
+			"id": "clarkio-twitch-bot",
+			"content": "<p>Refactored to remove dead code, improve readability and improve performance.</p>\n"
+		},
+		{
+			"weight": 60,
+			"title": "Chatterbox Translator Bot",
+			"titleRight": "Twitch bot that translates chat messages in real time",
+			"tech": "JavaScript, Node, Twitch",
+			"source": {
+				"url": "https://github.com/instafluff/ChatterboxTranslatorBot"
+			},
+			"id": "twitch-translator-bot",
+			"content": "<p>Large code refactoring and add tests:</p>\n<ul>\n<li>Refactored code from single function blob to a modular DRY codebase.</li>\n<li>Added tests to allow safer future development.</li>\n<li>Added caching to reduce cost of making API calls.</li>\n</ul>\n"
+		},
+		{
+			"weight": 80,
+			"title": "tldr (npm version)",
+			"titleRight": "Command line tool that provides elegant documentation",
+			"tech": "Node",
+			"source": {
+				"url": "https://tldr.sh"
+			},
+			"image": [
+				{
+					"src": "contributions/tldr.png",
+					"alt": "tldr pages logo"
+				}
+			],
+			"id": "tldr-npm",
+			"content": "<p>Improved and cleaned up testing.</p>\n"
+		},
+		{
+			"weight": 100,
+			"title": "Pug Plug-In for Prettier",
+			"titleRight": "Prettier plug-in to format Pug templates",
+			"tech": "Node, Typescript, Prettier, Pug",
+			"source": {
+				"url": "https://github.com/prettier/plugin-pug"
+			},
+			"image": [
+				{
+					"src": "contributions/prettier.svg",
+					"alt": "Prettier logo"
+				},
+				{
+					"src": "contributions/pug.svg",
+					"alt": "Pug logo"
+				}
+			],
+			"id": "pug-prettier-plugin",
+			"content": "<p>Added support for non-JavaScript script tags.</p>\n"
+		}
+	]
+}

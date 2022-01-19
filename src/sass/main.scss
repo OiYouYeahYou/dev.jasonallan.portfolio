@@ -6,6 +6,8 @@
 @import 'libs/html-grid';
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400');
 
+@import 'custom.scss';
+
 /*
 	Read Only by HTML5 UP
 	html5up.net | @ajlkn
@@ -898,7 +900,7 @@ ul.feature-icons {
 	list-style: none;
 	padding-left: 0;
 
-	li {
+	>li {
 		@include icon;
 		display: inline-block;
 		margin: 0 0 (_size(element-margin) * 0.75) 0;

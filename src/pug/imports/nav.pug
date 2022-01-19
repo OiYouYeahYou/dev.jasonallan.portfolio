@@ -1,4 +1,12 @@
-ul
-	each item in sections
-		li
-			a(href=item.href)= item.title
+nav#nav
+	if Array.isArray(sections) && sections.length
+		.icon.solid.fa-hashtag(style="margin-top: 2em")
+		ul
+			each item in sections
+				li
+					a(href=item.href)= item.title
+
+	.icon.solid.fa-file(style="margin-top: 2em")
+	ul
+		li: a(href="/src/pug/index.pug") Portfolio
+		li: a(href="/src/pug/contact.pug") Contact

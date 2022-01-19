@@ -1,7 +1,11 @@
 doctype html
 html
+	block vars
+
 	head
-		title Jason Allan - Developer
+		title 
+			block title
+				| Jason Allan - Developer
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
 		link(rel="stylesheet", href="../sass/main.scss")
@@ -11,20 +15,25 @@ html
 		meta(name="description", content="Developer, open source advocate &amp; tech enthusiast")
 		link(rel="manifest", href="../site.webmanifest")
 
-		meta(property="og:title", content="Jason Allan - Developer")
-		meta(property="og:url", content="https://jasonallan.dev/")
-		meta(property="og:locale", content="en_GB")
-		meta(property="og:description", content="Developer, open source advocate &amp; tech enthusiast")
-		meta(property="og:site_name", content="Jason Allan - Developer")
-		meta(property="og:image", content="../images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg")
+		each value, key in opengraph
+			meta(property='og:' + key, content=value)
 
-		meta(name="twitter:card", content="summary")
-		meta(name="twitter:site", content="@OiYouYeahYou")
-		meta(name="twitter:creator", content="@OiYouYeahYou")
-		meta(name="twitter:title", content="Jason Allan - Developer")
-		meta(name="twitter:description", content="Developer, open source advocate &amp; tech enthusiast")
-		meta(name="twitter:image", content="../images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg")
-		meta(name="twitter:image:alt", content="Cute little hamster")
+		each value, key in twitter
+			meta(name='twitter:' + key, content=value)
+
+		link(
+			rel="stylesheet",
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css",
+			integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==",
+			crossorigin="anonymous",
+			referrerpolicy="no-referrer"
+		)
+		script(
+			src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js",
+			integrity="sha512-fzff82+8pzHnwA1mQ0dzz9/E0B+ZRizq08yZfya66INZBz86qKTCt9MLU0NCNIgaMJCgeyhujhasnFUsYMsi0Q==",
+			crossorigin="anonymous",
+			referrerpolicy="no-referrer"
+		)
 
 		script(type="application/ld+json").
 			{
@@ -41,58 +50,61 @@ html
 			}
 
 	body.is-preload
-		// Header
-		section#header
-			// Header Header
-			header
-				span.image.avatar
-					img(src="../images/ricky-kharawala-adK3Vu70DEQ-unsplash.jpg", alt="")
-				h1#logo
-					a(href="#") Jason Allan
-				p.
-					Software Developer
-
-			// Navigation
-			nav#nav
-				block nav
-
-			// Social Icons
-			footer
-				ul.icons
-					li
-						a.icon.brands.fa-github(rel="me", target="_blank", href="https://github.com/oiyouyeahyou")
-							span.label GitHub
-					li
-						a.icon.brands.fa-twitter(rel="me", target="_blank", href="https://twiitter.com/oiyouyeahyou")
-							span.label Twitter
-					li
-						a.icon.brands.fa-stack-overflow(rel="me", target="_blank", href="https://stackoverflow.com/story/oiyouyeahyou")
-							span.label Stack Overflow
-					li
-						a.icon.brands.fa-mastodon(rel="me", target="_blank", href="https://mastodon.social/@oiyouyeahyou")
-							span.label Matodon
-					li
-						a.icon.solid.fa-envelope(href="#contact")
-							span.label Email
-
-		// Wrapper
+		//- Wrapper
 		#wrapper
-			// Main
+			//- Main
 			#main
+				//- About
+				+addSectionItem('About', '#about')
+				section#about
+					.image.main(data-position="center")
+						img(
+							style="filter: blur(6px); transform: scale(1.1)",
+							src="../images/walkator-klMii3cR9iI-unsplash.jpg?width=800px",
+							alt=""
+						)
+					.container
+						header.major
+							h2 Jason Allan - Developer
+							p Developer, open-source advocate & tech enthusiast.
+						block about
+							p.
+								I'm a polyglot programmer seeking a development role. I
+								contribute to open source software. I love to solve complex
+								problems and find the most optimum solution.
 				block main
 
-			// Footer
+			//- Footer
 			section#footer
 				.container
 					ul.copyright
-						//
-							Read Only by HTML5 UP
-							html5up.net | @ajlkn
-							Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-						li Design:
-							a(target="_blank", href="http://html5up.net") HTML5 UP
-						li Deployment: with Netlify
-						li Edited: Vim and VS Code
+						li Copyright Jason Allan
+						li: a(href="/src/pug/thanks.pug") Thanks, Attributions and Licences
 
-		// Scripts
+		//- Header
+		section#header
+			//- Header Header
+			header
+				span.image.avatar: img(src="../images/quokka-logo.png?width=320px", alt="")
+				h1#logo: a(href="/") Jason Allan
+				p Software Developer
+
+			//- Navigation
+			block nav
+
+			//- Social Icons
+			footer: ul.icons: each link in social
+				li: a.icon&attributes({
+					class: `${link.icon.category} fa-${link.icon.name}`,
+					href: link.href,
+
+					...(link.relMe ? { rel: 'me', target: '_blank' } : undefined)
+				}): span.label= link.title
+
+		#titleBar
+			a#header.toggle(href='#header')
+			span.title
+				a(href="/") Jason Allan
+
+		//- Scripts
 		script(type="module", src="../js/main.js")
